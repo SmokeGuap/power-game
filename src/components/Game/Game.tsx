@@ -12,10 +12,11 @@ import {
 import styles from './Game.module.scss';
 
 const Game: FC = () => {
-  const { gameStart, setGameStart, setPunch } = useContext(StateContext);
+  const { punch, gameStart, setGameStart, setPunch } = useContext(StateContext);
 
-  const start = () => setGameStart(true);
-  const punch = () => setPunch(true);
+  const handleStart = () => setGameStart(true);
+  const handlePunch = () => setPunch(true);
+  const handleRestart = () => setPunch(false);
 
   return (
     <div className={styles.gameWrapper}>
@@ -25,7 +26,12 @@ const Game: FC = () => {
         <Hammer />
         <Scale />
         <Robot />
-        {gameStart ? (
+        {gameStart && punch ? (
+          <h1 className={styles.title}>
+            Неплохо!
+            <br /> Попробуй еще раз.
+          </h1>
+        ) : gameStart ? (
           <h1 className={styles.title}>
             Жми на кнопку
             <br /> в нужный момент!
@@ -36,12 +42,16 @@ const Game: FC = () => {
             <br /> проверим твою силу!
           </h1>
         )}
-        {gameStart ? (
-          <button onClick={punch} className={styles.activeButton}>
+        {gameStart && punch ? (
+          <button onClick={handleRestart} className={styles.startButton}>
+            НОВАЯ ИГРА
+          </button>
+        ) : gameStart ? (
+          <button onClick={handlePunch} className={styles.activeButton}>
             УДАР!
           </button>
         ) : (
-          <button onClick={start} className={styles.startButton}>
+          <button onClick={handleStart} className={styles.startButton}>
             НОВАЯ ИГРА
           </button>
         )}
