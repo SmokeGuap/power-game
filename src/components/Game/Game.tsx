@@ -8,6 +8,7 @@ import {
   Robot,
   Scale,
 } from 'src/components/ImageComponents';
+import gameConfig from 'src/gameConfig';
 
 import styles from './Game.module.scss';
 
@@ -36,7 +37,7 @@ const Game: FC = () => {
         <Hammer />
         <Scale />
         <Robot />
-        {gameStart && punch && powerOfPunch > 80 ? (
+        {gameStart && punch && powerOfPunch > gameConfig.ruby ? (
           <p className={styles.text}>
             ВОТ ЭТО СИЛА!
             <br /> Ты выбил главный приз!
