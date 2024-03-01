@@ -12,11 +12,15 @@ import {
 import styles from './Game.module.scss';
 
 const Game: FC = () => {
-  const { punch, gameStart, setGameStart, setPunch } = useContext(StateContext);
+  const { punch, gameStart, setGameStart, setPunch, setPowerOfPunch } =
+    useContext(StateContext);
 
   const handleStart = () => setGameStart(true);
   const handlePunch = () => setPunch(true);
-  const handleRestart = () => setPunch(false);
+  const handleRestart = () => {
+    setPunch(false);
+    setPowerOfPunch(0);
+  };
 
   return (
     <div className={styles.gameWrapper}>
