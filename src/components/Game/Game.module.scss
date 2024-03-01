@@ -21,7 +21,8 @@
   text-align: center;
   position: absolute;
   bottom: 100px;
-  left: 110px;
+  width: 145px;
+  left: 107px;
 }
 
 .button {
@@ -33,4 +34,14 @@
   position: absolute;
   bottom: 52px;
   left: 94px;
+  transition: transform 0.1s linear;
+
+  &:active {
+    transform: scale(1.05);
+  }
+}
+
+.activeButton {
+  color: $buttonActiveColor;
+  background-color: $buttonActiveBackground;
 }

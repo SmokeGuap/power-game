@@ -1,5 +1,7 @@
-import { FC } from 'react';
+import classnames from 'classnames';
+import { FC, useContext } from 'react';
 
+import { StateContext } from 'src/context';
 import {
   Hammer,
   Measure,
@@ -11,6 +13,10 @@ import {
 import styles from './Game.module.scss';
 
 const Game: FC = () => {
+  const { gameStart, setGameStart } = useContext(StateContext);
+
+  const start = () => setGameStart(true);
+
   return (
     <div className={styles.gameWrapper}>
       <div className={styles.game}>
@@ -19,11 +25,25 @@ const Game: FC = () => {
         <Hammer />
         <Scale />
         <Robot />
-        <h1 className={styles.title}>
-          Привет!
-          <br /> проверим твою силу!
-        </h1>
-        <button className={styles.button}>НОВАЯ ИГРА</button>
+        {gameStart ? (
+          <h1 className={styles.title}>
+            Жми на кнопку
+            <br /> в нужный момент!
+          </h1>
+        ) : (
+          <h1 className={styles.title}>
+            Привет!
+            <br /> проверим твою силу!
+          </h1>
+        )}
+        <button
+          onClick={start}
+          className={classnames(styles.button, {
+            [styles.activeButton]: gameStart,
+          })}
+        >
+          {gameStart ? 'УДАР!' : 'НОВАЯ ИГРА'}
+        </button>
       </div>
     </div>
   );
