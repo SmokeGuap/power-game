@@ -1,0 +1,26 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-family: 'Roboto';
+}
+
+body {
+  color: $white;
+  font: {
+    family: 'Roboto', sans-serif;
+    weight: 700;
+    style: normal;
+    size: 14px;
+  }
+}
