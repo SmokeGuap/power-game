@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react';
+import { FC, useContext, useEffect, useState } from 'react';
 
 import { StateContext } from 'src/context';
 import {
@@ -20,10 +20,20 @@ const Game: FC = () => {
     setPunch,
     setPowerOfPunch,
     powerOfPunch,
+    timeDisabled,
   } = useContext(StateContext);
 
+  const [disabled, setDisabled] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setDisabled(false), timeDisabled);
+  }, [timeDisabled]);
+
   const handleStart = () => setGameStart(true);
-  const handlePunch = () => setPunch(true);
+  const handlePunch = () => {
+    setPunch(true);
+    setDisabled(true);
+  };
   const handleRestart = () => {
     setPunch(false);
     setPowerOfPunch(0);
@@ -60,7 +70,11 @@ const Game: FC = () => {
           </p>
         )}
         {gameStart && punch ? (
-          <button onClick={handleRestart} className={styles.startButton}>
+          <button
+            disabled={disabled}
+            onClick={handleRestart}
+            className={styles.startButton}
+          >
             НОВАЯ ИГРА
           </button>
         ) : gameStart ? (

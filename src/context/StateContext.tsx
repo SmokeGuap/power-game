@@ -8,6 +8,8 @@ interface IStateContext {
   setPunch: Dispatch<SetStateAction<boolean>>;
   powerOfPunch: number;
   setPowerOfPunch: Dispatch<SetStateAction<number>>;
+  timeDisabled: number;
+  setTimeDisabled: Dispatch<SetStateAction<number>>;
 }
 
 interface IStateProviderProps extends React.DOMAttributes<HTMLDivElement> {
@@ -21,12 +23,15 @@ const StateContext = createContext<IStateContext>({
   setPunch: () => {},
   powerOfPunch: 0,
   setPowerOfPunch: () => {},
+  timeDisabled: 0,
+  setTimeDisabled: () => {},
 });
 
 const StateProvider: FC<IStateProviderProps> = ({ children }) => {
   const [gameStart, setGameStart] = useState<boolean>(false);
   const [punch, setPunch] = useState<boolean>(false);
   const [powerOfPunch, setPowerOfPunch] = useState<number>(0);
+  const [timeDisabled, setTimeDisabled] = useState<number>(0);
 
   return (
     <StateContext.Provider
@@ -37,6 +42,8 @@ const StateProvider: FC<IStateProviderProps> = ({ children }) => {
         setPunch,
         powerOfPunch,
         setPowerOfPunch,
+        timeDisabled,
+        setTimeDisabled,
       }}
     >
       {children}

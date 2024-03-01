@@ -17,7 +17,7 @@ import gameConfig from 'src/gameConfig';
 import styles from './Measure.module.scss';
 
 const Measure: FC = () => {
-  const { powerOfPunch, punch } = useContext(StateContext);
+  const { powerOfPunch, punch, setTimeDisabled } = useContext(StateContext);
 
   const [block1, setBlock1] = useState(false);
   const [block2, setBlock2] = useState(false);
@@ -51,6 +51,7 @@ const Measure: FC = () => {
   }, [punch, powerOfPunch]);
 
   const delay = (time: number, setBlock: Dispatch<SetStateAction<boolean>>) => {
+    setTimeDisabled(time);
     setTimeout(() => {
       setBlock(true);
     }, time);
