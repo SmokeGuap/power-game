@@ -16,7 +16,7 @@ const Scale: FC = () => {
 
     const interval = setInterval(() => {
       setScale(Math.floor(Math.random() * 101));
-    }, 300);
+    }, 100);
 
     if (punch) {
       clearInterval(interval);

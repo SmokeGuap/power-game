@@ -27,7 +27,7 @@
 .powerLevel {
   position: relative;
   background-color: $green;
-  transition: height 0.3s linear;
+  transition: height 0.1s linear;
 
   &::before {
     position: absolute;
