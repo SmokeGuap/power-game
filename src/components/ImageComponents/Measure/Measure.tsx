@@ -48,10 +48,17 @@ const Measure: FC = () => {
     if (powerOfPunch > gameConfig.block6) delay(1500, setBlock6);
     if (powerOfPunch > gameConfig.block7) delay(1800, setBlock7);
     if (powerOfPunch > gameConfig.ruby) delay(2100, setRuby);
+
+    const tmp = Object.keys(gameConfig);
+    const time = +tmp.reduce(
+      (sum, item) =>
+        powerOfPunch > gameConfig[item] ? (sum += 300) : (sum += 0),
+      0
+    );
+    setTimeDisabled(time);
   }, [punch, powerOfPunch]);
 
   const delay = (time: number, setBlock: Dispatch<SetStateAction<boolean>>) => {
-    setTimeDisabled(time);
     setTimeout(() => {
       setBlock(true);
     }, time);

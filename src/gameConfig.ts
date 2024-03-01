@@ -1,4 +1,8 @@
-const gameConfig = {
+export interface IGameConfig {
+  [key: string]: number;
+}
+
+const gameConfig: IGameConfig = {
   block1: 0,
   block2: 15,
   block3: 30,
