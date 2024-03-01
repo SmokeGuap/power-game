@@ -1,0 +1,86 @@
+@import 'src/styles/variables';
+
+.measure {
+  position: absolute;
+  top: 5%;
+  left: 60px;
+  height: 320px;
+}
+
+.levels {
+  width: 73px;
+  position: absolute;
+  top: 56px;
+  left: 143px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.levelRuby {
+  height: 47px;
+  border-radius: 4px;
+  background: $rubyBackground;
+}
+
+.ruby {
+  width: 80%;
+  position: absolute;
+  top: -7px;
+  left: 10%;
+}
+
+.level {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    content: '';
+    display: block;
+    height: 3px;
+    width: calc(100% - 4px);
+    background: $blockGlow;
+  }
+
+  &::after {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    content: '';
+    display: block;
+    width: 3px;
+    height: calc(100% - 4px);
+    background: $blockGlow;
+  }
+  &:nth-of-type(1) {
+    height: 24px;
+    background-color: $block1;
+  }
+  &:nth-of-type(2) {
+    height: 25px;
+    background-color: $block2;
+  }
+  &:nth-of-type(3) {
+    height: 30px;
+    background-color: $block3;
+  }
+  &:nth-of-type(4) {
+    height: 35px;
+    background-color: $block4;
+  }
+  &:nth-of-type(5) {
+    height: 40px;
+    background-color: $block5;
+  }
+  &:nth-of-type(6) {
+    height: 45px;
+
+    background-color: $block6;
+  }
+  &:nth-of-type(7) {
+    height: 50px;
+    background-color: $block7;
+  }
+}

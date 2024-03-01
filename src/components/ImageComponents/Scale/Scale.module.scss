@@ -1,0 +1,43 @@
+@import 'src/styles/variables';
+
+.scale {
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  height: 147px;
+}
+
+.scaleLevels {
+  position: absolute;
+  z-index: 2;
+  bottom: 50px;
+  left: 20px;
+  height: 147px;
+}
+
+.power {
+  transform: rotate(180deg);
+  position: absolute;
+  bottom: 50px;
+  left: 25px;
+  width: 38px;
+  height: 146px;
+}
+
+.powerLevel {
+  position: relative;
+  background-color: $green;
+  transition: height 0.3s linear;
+
+  &::before {
+    position: absolute;
+    left: -10%;
+    bottom: 0px;
+    content: '';
+    display: block;
+    border-radius: 2px;
+    height: 3px;
+    width: 120%;
+    background: $white;
+  }
+}

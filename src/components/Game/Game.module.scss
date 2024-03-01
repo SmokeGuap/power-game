@@ -1,0 +1,36 @@
+@import 'src/styles/variables';
+
+.gameWrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  background-image: url('src/assets/images/bg_top.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.title {
+  font-size: 14px;
+  text-align: center;
+  position: absolute;
+  bottom: 100px;
+  left: 110px;
+}
+
+.button {
+  background-color: $buttonBackground;
+  border: 1px solid $white;
+  border-radius: 2px;
+  width: 172px;
+  height: 36px;
+  position: absolute;
+  bottom: 52px;
+  left: 94px;
+}
