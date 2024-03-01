@@ -6,6 +6,8 @@ interface IStateContext {
   setGameStart: Dispatch<SetStateAction<boolean>>;
   punch: boolean;
   setPunch: Dispatch<SetStateAction<boolean>>;
+  powerOfPunch: number;
+  setPowerOfPunch: Dispatch<SetStateAction<number>>;
 }
 
 interface IStateProviderProps extends React.DOMAttributes<HTMLDivElement> {
@@ -17,11 +19,14 @@ const StateContext = createContext<IStateContext>({
   setGameStart: () => {},
   punch: false,
   setPunch: () => {},
+  powerOfPunch: 0,
+  setPowerOfPunch: () => {},
 });
 
 const StateProvider: FC<IStateProviderProps> = ({ children }) => {
   const [gameStart, setGameStart] = useState<boolean>(false);
   const [punch, setPunch] = useState<boolean>(false);
+  const [powerOfPunch, setPowerOfPunch] = useState<number>(0);
 
   return (
     <StateContext.Provider
@@ -30,6 +35,8 @@ const StateProvider: FC<IStateProviderProps> = ({ children }) => {
         setGameStart,
         punch,
         setPunch,
+        powerOfPunch,
+        setPowerOfPunch,
       }}
     >
       {children}

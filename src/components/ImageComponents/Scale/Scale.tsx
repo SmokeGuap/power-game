@@ -7,7 +7,7 @@ import { StateContext } from 'src/context';
 import styles from './Scale.module.scss';
 
 const Scale: FC = () => {
-  const { gameStart, punch } = useContext(StateContext);
+  const { gameStart, punch, setPowerOfPunch } = useContext(StateContext);
 
   const [scale, setScale] = useState(1);
 
@@ -18,7 +18,10 @@ const Scale: FC = () => {
       setScale(Math.floor(Math.random() * 101));
     }, 300);
 
-    if (punch) clearInterval(interval);
+    if (punch) {
+      clearInterval(interval);
+      setPowerOfPunch(scale);
+    }
 
     return () => clearInterval(interval);
   }, [gameStart, punch]);

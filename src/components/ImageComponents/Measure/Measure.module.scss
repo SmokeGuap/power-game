@@ -23,11 +23,23 @@
   background: $rubyBackground;
 }
 
+.levelRubyActive {
+  background: $rubyActiveBackground;
+}
+
 .ruby {
   width: 80%;
   position: absolute;
+  z-index: 1;
   top: -7px;
   left: 10%;
+}
+
+.rubyGlow {
+  width: 100%;
+  position: absolute;
+  top: -20px;
+  left: 0;
 }
 
 .level {
@@ -76,11 +88,34 @@
   }
   &:nth-of-type(6) {
     height: 45px;
-
     background-color: $block6;
   }
   &:nth-of-type(7) {
     height: 50px;
     background-color: $block7;
+  }
+}
+
+.levelActive {
+  &:nth-of-type(1) {
+    background-color: $blockActive1;
+  }
+  &:nth-of-type(2) {
+    background-color: $blockActive2;
+  }
+  &:nth-of-type(3) {
+    background-color: $blockActive3;
+  }
+  &:nth-of-type(4) {
+    background-color: $blockActive4;
+  }
+  &:nth-of-type(5) {
+    background-color: $blockActive5;
+  }
+  &:nth-of-type(6) {
+    background-color: $blockActive6;
+  }
+  &:nth-of-type(7) {
+    background-color: $blockActive7;
   }
 }
