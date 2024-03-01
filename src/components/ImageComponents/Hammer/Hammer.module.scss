@@ -1,7 +1,21 @@
 .hammer {
   position: absolute;
-  bottom: 200px;
+  bottom: 240px;
   right: 56px;
   height: 120px;
   transform: rotate(-40deg);
+  transform-origin: bottom right;
+  transition: all 0.3s linear;
+}
+
+.hammerActive {
+  bottom: 270px;
+  right: 20px;
+  transform: rotate(0deg);
+}
+
+.hammerPunch {
+  bottom: 350px;
+  right: 95px;
+  transform: rotate(-90deg);
 }
