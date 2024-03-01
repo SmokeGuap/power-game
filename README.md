@@ -5,6 +5,10 @@
 - Vite
 - Typescript
 
+## Game Config
+
+In the src directory in the gameConfig.ts file contains the game settings
+
 ## How to run
 
 In the project directory, you can run: `npm run dev`
