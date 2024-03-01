@@ -5,7 +5,8 @@ const gameConfig = {
   block4: 45,
   block5: 60,
   block6: 75,
-  ruby: 80,
+  block7: 80,
+  ruby: 90,
 };
 
 export default gameConfig;

@@ -19,6 +19,7 @@
 
 .levelRuby {
   height: 47px;
+  margin-bottom: 10px;
   border-radius: 4px;
   background: $rubyBackground;
 }
@@ -66,56 +67,59 @@
     height: calc(100% - 4px);
     background: $blockGlow;
   }
-  &:nth-of-type(1) {
-    height: 24px;
+
+  &:nth-of-type(2) {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    height: 19px;
     background-color: $block1;
   }
-  &:nth-of-type(2) {
-    height: 25px;
+  &:nth-of-type(3) {
+    height: 20px;
     background-color: $block2;
   }
-  &:nth-of-type(3) {
-    height: 30px;
+  &:nth-of-type(4) {
+    height: 25px;
     background-color: $block3;
   }
-  &:nth-of-type(4) {
-    height: 35px;
+  &:nth-of-type(5) {
+    height: 30px;
     background-color: $block4;
   }
-  &:nth-of-type(5) {
-    height: 40px;
+  &:nth-of-type(6) {
+    height: 35px;
     background-color: $block5;
   }
-  &:nth-of-type(6) {
-    height: 45px;
+  &:nth-of-type(7) {
+    height: 40px;
     background-color: $block6;
   }
-  &:nth-of-type(7) {
-    height: 50px;
+  &:nth-of-type(8) {
+    height: 45px;
     background-color: $block7;
   }
 }
 
 .levelActive {
-  &:nth-of-type(1) {
+  &:nth-of-type(2) {
     background-color: $blockActive1;
   }
-  &:nth-of-type(2) {
+  &:nth-of-type(3) {
     background-color: $blockActive2;
   }
-  &:nth-of-type(3) {
+  &:nth-of-type(4) {
     background-color: $blockActive3;
   }
-  &:nth-of-type(4) {
+  &:nth-of-type(5) {
     background-color: $blockActive4;
   }
-  &:nth-of-type(5) {
+  &:nth-of-type(6) {
     background-color: $blockActive5;
   }
-  &:nth-of-type(6) {
+  &:nth-of-type(7) {
     background-color: $blockActive6;
   }
-  &:nth-of-type(7) {
+  &:nth-of-type(8) {
     background-color: $blockActive7;
   }
 }
