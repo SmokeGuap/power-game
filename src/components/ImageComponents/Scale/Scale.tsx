@@ -1,20 +1,27 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useContext, useEffect, useState } from 'react';
 
 import ScaleImage from 'src/assets/images/scale.png';
 import ScaleLevels from 'src/assets/images/scale-1.png';
+import { StateContext } from 'src/context';
 
 import styles from './Scale.module.scss';
 
 const Scale: FC = () => {
+  const { gameStart, punch } = useContext(StateContext);
+
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
+    if (!gameStart) return;
+
     const interval = setInterval(() => {
       setScale(Math.floor(Math.random() * 101));
     }, 300);
 
+    if (punch) clearInterval(interval);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [gameStart, punch]);
 
   return (
     <>
