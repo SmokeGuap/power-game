@@ -25,7 +25,7 @@
   left: 107px;
 }
 
-.button {
+.startButton {
   background-color: $buttonBackground;
   border: 1px solid $white;
   border-radius: 2px;
@@ -44,4 +44,16 @@
 .activeButton {
   color: $buttonActiveColor;
   background-color: $buttonActiveBackground;
+  border: 1px solid $buttonActiveColor;
+  border-radius: 2px;
+  width: 172px;
+  height: 36px;
+  position: absolute;
+  bottom: 52px;
+  left: 94px;
+  transition: transform 0.1s linear;
+
+  &:active {
+    transform: scale(1.05);
+  }
 }

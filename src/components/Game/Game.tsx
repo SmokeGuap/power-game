@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import { FC, useContext } from 'react';
 
 import { StateContext } from 'src/context';
@@ -13,9 +12,10 @@ import {
 import styles from './Game.module.scss';
 
 const Game: FC = () => {
-  const { gameStart, setGameStart } = useContext(StateContext);
+  const { gameStart, setGameStart, setPunch } = useContext(StateContext);
 
   const start = () => setGameStart(true);
+  const punch = () => setPunch(true);
 
   return (
     <div className={styles.gameWrapper}>
@@ -36,14 +36,15 @@ const Game: FC = () => {
             <br /> проверим твою силу!
           </h1>
         )}
-        <button
-          onClick={start}
-          className={classnames(styles.button, {
-            [styles.activeButton]: gameStart,
-          })}
-        >
-          {gameStart ? 'УДАР!' : 'НОВАЯ ИГРА'}
-        </button>
+        {gameStart ? (
+          <button onClick={punch} className={styles.activeButton}>
+            УДАР!
+          </button>
+        ) : (
+          <button onClick={start} className={styles.startButton}>
+            НОВАЯ ИГРА
+          </button>
+        )}
       </div>
     </div>
   );
