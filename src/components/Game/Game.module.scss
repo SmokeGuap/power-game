@@ -16,13 +16,17 @@
   background-size: contain;
 }
 
-.title {
+.text {
   font-size: 14px;
   text-align: center;
   position: absolute;
   bottom: 100px;
-  width: 145px;
-  left: 107px;
+  width: 165px;
+  left: 97px;
+
+  strong {
+    color: $red;
+  }
 }
 
 .startButton {

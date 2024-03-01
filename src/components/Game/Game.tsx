@@ -12,8 +12,14 @@ import {
 import styles from './Game.module.scss';
 
 const Game: FC = () => {
-  const { punch, gameStart, setGameStart, setPunch, setPowerOfPunch } =
-    useContext(StateContext);
+  const {
+    punch,
+    gameStart,
+    setGameStart,
+    setPunch,
+    setPowerOfPunch,
+    powerOfPunch,
+  } = useContext(StateContext);
 
   const handleStart = () => setGameStart(true);
   const handlePunch = () => setPunch(true);
@@ -30,21 +36,27 @@ const Game: FC = () => {
         <Hammer />
         <Scale />
         <Robot />
-        {gameStart && punch ? (
-          <h1 className={styles.title}>
+        {gameStart && punch && powerOfPunch > 80 ? (
+          <p className={styles.text}>
+            ВОТ ЭТО СИЛА!
+            <br /> Ты выбил главный приз!
+            <br /> <strong>Рубин</strong>
+          </p>
+        ) : gameStart && punch ? (
+          <p className={styles.text}>
             Неплохо!
             <br /> Попробуй еще раз.
-          </h1>
+          </p>
         ) : gameStart ? (
-          <h1 className={styles.title}>
+          <p className={styles.text}>
             Жми на кнопку
             <br /> в нужный момент!
-          </h1>
+          </p>
         ) : (
-          <h1 className={styles.title}>
+          <p className={styles.text}>
             Привет!
             <br /> проверим твою силу!
-          </h1>
+          </p>
         )}
         {gameStart && punch ? (
           <button onClick={handleRestart} className={styles.startButton}>
